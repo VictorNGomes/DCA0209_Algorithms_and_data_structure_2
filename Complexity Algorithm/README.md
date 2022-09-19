@@ -1,3 +1,5 @@
+## Alternative solution of linear complexity for the TwoNumberSum problem.
+
 ```py
 def twoNumberSum(array, targetSum):
   results = {} # C1 1 Time
