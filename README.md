@@ -1,4 +1,4 @@
-# DCA0209 Algorithms and data structure_2
+# DCA0209 Algorithms and data structure II
 Activities developed during the data structure course II
 
 
