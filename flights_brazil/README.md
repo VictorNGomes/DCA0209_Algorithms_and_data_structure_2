@@ -170,5 +170,9 @@ The clustering coefficient for the region can be seen below
 ![CC_ce](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_centro_oeste.png)
 ![CC_sul](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_sul.png)
 
+## Tools
+- Networkx [[Link]](https://networkx.org/)
+- NxViz [[Link]](https://github.com/ericmjl/nxviz)
+
 ## References
 [1] :books: Coscia, Michele. The Atlas for the Aspiring Network Scientist [[Link]](https://www.networkatlas.eu/)
