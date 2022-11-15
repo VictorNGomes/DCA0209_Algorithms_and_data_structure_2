@@ -26,7 +26,7 @@ Loading graph
 air_trafic = nx.read_graphml('/content/drive/MyDrive/airport_traffic_analisis/dataset-flights-brazil/data/air_traffic.graphml')
 
 ````
-em seguida foram removidos os nós que represetam o aeroportos fora do brasil
+then the nodes representing airports outside Brazil were removed
 
 ```python
 regions= ['NORTE', 'NORDESTE', 'CENTRO-OESTE', 'SUDESTE', 'SUL']
