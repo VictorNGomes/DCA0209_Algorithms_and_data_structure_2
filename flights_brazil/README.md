@@ -99,7 +99,7 @@ From the graph, it is possible to observe that the coefficient is negative, that
 
 ## Paths
 Through networks it is possible to know the shortest path from one node to another.
-Para isto, foi escolhido arbitrariamente uma ciadade de cada regição para vizualizar o caminho mais curto para passar por todas esla na seguinte ordem:
+For this, a city from each region was arbitrarily chosen to visualize the shortest path to pass through all of them in the following order:
  - city 1 (North) to city 2 (South)
  - city 2 (South) to city 3 (Northeast)
  - city 3 (Northeast) to city 4 (Midwest)
@@ -146,13 +146,13 @@ print(path)
 - Laranja 'MUCURI', até  'SÃO MIGUEL DO ARAGUAIA'
 - Verde  'SÃO MIGUEL DO ARAGUAIA' até   'RIO DE JANEIRO'
 
-O plot de toda a red  abaixo mostra os caminhos:
+The plot of the entire network below shows the paths:
 ![PlotPath](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/paths_simulation.png)
  
 ## Clustering Coefficient
 The clustering coefficient is a metric which measures represents how much a node tends to be clustered. For example, if a reference node (or ego node) connects to N nodes and all these N are also connected, the clustering coefficient is maximum, that is, 1. This metric can be measured using the number of triangles that exist between the nos. It is also possible to calculate the global average of the coefficients.
 
-Assim sendo, foi cálculado o  average clustering de toda rede e para cada região.
+Therefore, the average clustering of the entire network and for each region is calculated.
 ```python
 nx.average_clustering(air_trafic)
 ```
