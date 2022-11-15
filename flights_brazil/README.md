@@ -35,12 +35,18 @@ for i, data in list(air_trafic.nodes(data=True)):
   if data['region'] not in regions:
     air_trafic.remove_node(i)
   print(i,data)
-````
+```
 
 
 
 ## Assortativity
 In a nutshell, assortivity is a metric that seeks to quantify how much the network components are related based on their similar attributes. That is, whether elements with similar characteristics tend to relate more.
+The assortative coefficient is between [-1, 1] networks with values below between [-1,0 ] are non-assortative and above 0 and less than 1 assortative.
+To obtain the assortative coefficient in relation to the regions, simply:
+```python
+nx.attribute_assortativity_coefficient(air_trafic, 'region')
+```
+resulted in : 0.36858192263245576
 
 
 ## Bivariate analysis
