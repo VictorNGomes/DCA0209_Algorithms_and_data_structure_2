@@ -98,5 +98,54 @@ nx.degree_assortativity_coefficient(air_trafic)
 From the graph, it is possible to observe that the coefficient is negative, that is, the network shows that as the degree of the nodes increase, they tend to connect with nodes of lower degree.
 
 ## Paths
+Through networks it is possible to know the shortest path from one node to another.
+Para isto, foi escolhido arbitrariamente uma ciadade de cada regição para vizualizar o caminho mais curto para passar por todas esla na seguinte ordem:
+ - city 1 (North) to city 2 (South)
+ - city 2 (South) to city 3 (Northeast)
+ - city 3 (Northeast) to city 4 (Midwest)
+ - city 4 (Midwest) to city 5 (Southeast)
 
+Where,
+city1 is the node 'SWBI' = 'BARREIRINHA',
+city2 is the node 'SSAE' = 'ARROIO GRANDE',
+city3 is node'SNMU' = 'MUCURI',
+city4 is the node 'SWDE' = 'SÃO MIGUEL DO ARAGUAIA',
+city5 is node 'SDDM' = 'RIO DE JANEIRO'
+
+It is possible to know the name of the city by simply:
+
+```python
+def code_to_name(code):
+  for i, data in list(air_trafic.nodes(data=True)): 
+    if i == code:
+      return data['name']
+```
+
+```python
+if nx.has_path(air_trafic,"SWBI","SSAE"):
+  path = nx.shortest_path(air_trafic,"SWBI","SSAE")
+list(map(code_to_name, path))
+
+if nx.has_path(air_trafic,city2, city3 ):
+  path = nx.shortest_path(air_trafic,city2,city3)
+print(list(map(code_to_name, path)))
+print(path)
+
+if nx.has_path(air_trafic,city3, city4 ):
+  path = nx.shortest_path(air_trafic,city3,city4)
+print(list(map(code_to_name, path)))
+print(path)
+
+if nx.has_path(air_trafic,city4, city5 ):
+  path = nx.shortest_path(air_trafic,city4,city5)
+print(list(map(code_to_name, path)))
+print(path)
+```
+- Azul  'BARREIRINHA' até  'ARROIO GRANDE'
+- Vermelho   'ARROIO GRANDE' até  'MUCURI'
+- Laranja 'MUCURI', até  'SÃO MIGUEL DO ARAGUAIA'
+- Verde  'SÃO MIGUEL DO ARAGUAIA' até   'RIO DE JANEIRO'
+O plot de toda a red  abaixo mostra os caminhos:
+
+ 
 ## Clustering Coefficient
