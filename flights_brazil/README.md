@@ -145,7 +145,27 @@ print(path)
 - Vermelho   'ARROIO GRANDE' até  'MUCURI'
 - Laranja 'MUCURI', até  'SÃO MIGUEL DO ARAGUAIA'
 - Verde  'SÃO MIGUEL DO ARAGUAIA' até   'RIO DE JANEIRO'
-O plot de toda a red  abaixo mostra os caminhos:
 
+O plot de toda a red  abaixo mostra os caminhos:
+![PlotPath](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/paths_simulation.png)
  
 ## Clustering Coefficient
+The clustering coefficient is a metric which measures represents how much a node tends to be clustered. For example, if a reference node (or ego node) connects to N nodes and all these N are also connected, the clustering coefficient is maximum, that is, 1. This metric can be measured using the number of triangles that exist between the nos. It is also possible to calculate the global average of the coefficients.
+
+Assim sendo, foi cálculado o  average clustering de toda rede e para cada região.
+```python
+nx.average_clustering(air_trafic)
+```
+Then, the coefficient for each node was extracted.
+```python
+cc = nx.clustering(air_trafic)
+```
+![HISTPLOT](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/hist_of_cc.png)
+
+![CC_NOR](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_nordeste.png)
+![CC_nrte](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_norte.png)
+![CC_sud](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_sudeste.png)
+![CC_ce](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_centro_oeste.png)
+![CC_sul](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_sul.png)
+
+
