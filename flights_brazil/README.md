@@ -47,9 +47,55 @@ To obtain the assortative coefficient in relation to the regions, simply:
 nx.attribute_assortativity_coefficient(air_trafic, 'region')
 ```
 resulted in : 0.36858192263245576
+Assortativity can be seen from the graph
+![CircosPlot](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/circusplot.png)
 
+The coefficient of assortative between regions can be visualized by simply
+```python
+nx.attribute_mixing_matrix(air_trafic,'region')
+```
+```
+array([[0.13652482, 0.02393617, 0.01983599, 0.00742465, 0.02870124],
+       [0.02393617, 0.04986702, 0.0106383 , 0.01252216, 0.03291223],
+       [0.01983599, 0.0106383 , 0.0802305 , 0.01340869, 0.05529699],
+       [0.00742465, 0.01252216, 0.01340869, 0.07180851, 0.03989362],
+       [0.02870124, 0.03291223, 0.05529699, 0.03989362, 0.17242908]])
+````
 
 ## Bivariate analysis
+Nodes in a network have the degree property, which shows how many neighbors it has . However, it is also possible to perform an analysis regarding the degrees of assotativity which is based on whether nodes with high degrees tend to connect. That said, it is possible to analyze whether the correlation between the degrees of nodes and whether it is assortative with respect to nodes
+Para vizualiar isto basta:
+```python
+degree, av_neigh_degree = zip(*nx.average_degree_connectivity(air_trafic).items())
+degree = np.array(degree)
+av_neigh_degree = np.array(av_neigh_degree)
+
+x = degree
+y = av_neigh_degree
+
+# fit a linear curve an estimate its y-values and their error.
+a, b = np.polyfit(x, y, deg=1)
+y_est = a * x + b
+y_err = x.std() * np.sqrt(1/len(x) +
+                          (x - x.mean())**2 / np.sum((x - x.mean())**2))
+
+fig, ax = plt.subplots()
+ax.set_xlabel('Node Degree')
+ax.set_ylabel('Average neighbhor degree')
+ax.grid()
+ax.plot(x, y_est, '-')
+ax.fill_between(x, y_est - y_err, y_est + y_err, alpha=0.2)
+ax.plot(x, y, 'o', color='tab:blue')
+
+````
+![RLPlot](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/bivariate_analisis.png)
+
+It is possible to obtain the degree assortativity coefficient:
+```python
+nx.degree_assortativity_coefficient(air_trafic)
+```
+
+From the graph, it is possible to observe that the coefficient is negative, that is, the network shows that as the degree of the nodes increase, they tend to connect with nodes of lower degree.
 
 ## Paths
 
