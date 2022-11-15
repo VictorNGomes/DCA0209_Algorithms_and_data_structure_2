@@ -160,6 +160,8 @@ Then, the coefficient for each node was extracted.
 ```python
 cc = nx.clustering(air_trafic)
 ```
+The clustering coefficient for the region can be seen below
+
 ![HISTPLOT](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/hist_of_cc.png)
 
 ![CC_NOR](https://github.com/VictorNGomes/DCA0209_Algorithms_and_data_structure_2/blob/main/flights_brazil/images/grafh_of_nordeste.png)
